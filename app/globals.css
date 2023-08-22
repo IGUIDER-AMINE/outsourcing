@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .btn {
+    @apply px-7 py-3 hover:scale-[1.06] duration-300 ease-in font-semibold;
+  }
+
+  .btn-green {
+    @apply bg-brand text-yellow text-sm;
+  }
+  .btn-yellow {
+    @apply bg-yellow border border-yellow text-dark text-sm;
+  }
+  .btn-outline {
+    @apply bg-transparent border border-gray/20 dark:text-white text-dark  text-sm;
+  }
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.4s ease-in-out;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #324242;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.link:hover {
+  color: #324242;
+}
+
+.bg-video {
+  position: relative;
+  background-image: url("/assets/imgs/about.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 550px;
+}
+.bg-video::before {
+  content: "";
+  position: absolute;
+  background-color: #f0dcab65;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Custom swiper style */
+.swiper-pagination {
+  text-align: start !important;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0px !important;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  width: 44px !important;
+  border-radius: 20px !important;
+  height: 2px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f0ddab !important;
+}
+
+/* Override global scrolbar styles */
+::-webkit-scrollbar-thumb {
+  background: #dfdfdf;
+  border-radius: 20px;
+}
+
+.sidebar-scroll-content::-webkit-scrollbar-thumb {
+  background: #042e3cc9;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
